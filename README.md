@@ -128,3 +128,29 @@ This policy will be reviewed annually or sooner if:
 - Regulatory or technology changes take place  
 - Audit findings identify gaps  
 
+## 🧭 Zero Trust Policy Flowchart
+```mermaid
+flowchart TD
+
+A[Start: User Request Access] --> B[Verify Identity]
+B --> C{MFA Successful?}
+C -- No --> Z[Access Denied]
+C -- Yes --> D[Evaluate Device Posture]
+
+D --> E{Is Device Compliant?}
+E -- No --> Z
+E -- Yes --> F[Check Least Privilege Policies]
+
+F --> G{Authorized for Requested Resource?}
+G -- No --> Z
+G -- Yes --> H[Micro-Segmentation Enforcement]
+
+H --> I[Continuous Monitoring & Logging]
+
+I --> J{Anomaly Detected?}
+J -- Yes --> K[Trigger Incident Response]
+J -- No --> L[Grant Conditional Access]
+
+L --> M[Session Continues with Continuous Validation]
+K --> Z
+M --> Z
