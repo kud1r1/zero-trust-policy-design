@@ -1,4 +1,4 @@
-# Zero Trust Policy Design - Lat updated  2025
+# Zero Trust Policy Design - Last updated  2025
 
 ## Zero Trust Security Policy for Remote and Hybrid Workforces
 
